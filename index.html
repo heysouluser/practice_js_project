@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="shortcut icon" href="fav_login.png" type="image/png">
+   <title>Cabinet</title>
+   <!--Import Google Icon Font-->
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <!--Import materialize.css-->
+   <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+   <link rel="stylesheet" href="./css/chips.css">
+   <link rel="stylesheet" href="./css/style.css">
+   <!--Let browser know website is optimized for mobile-->
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<!-- с 1-02 -->
+<body>
+   <header class="site-header">
+      <div class="container">
+         <div class="row">
+            <!-- верстка grid materializ`a -->
+            <div class="col s12 m5 l6 xl8">
+               <h1 class="site-title center-align">Our Project</h1>
+            </div>
+            <div class="col s6 center-align m4 l3 xl2 but-m">
+               <button class="modal-show waves-effect waves-light btn" data-modal="#sign-up"><i class="material-icons right">login</i>Signup</button>
+            </div>
+            <div class="col s6 center-align m3 l3 xl2 but-m">
+               <button class="modal-show waves-effect waves-light btn" data-modal="#log-in"><i class="material-icons right">login</i>Login</button>
+            </div>
+         </div>
+      </div>
+   </header>
+
+   <!-- частично беру код из practice JS (дз unit_11 - pop-up) + см. main.js и style.css -->
+   <!-- данная форма должна содержать слайдер со ссылкой на правила работы данного сайта (если пользователь принимает их, мы позволяем нажать ему кнопку sign in, если нет - блокируем ее) -->
+   <div class="modal-wrap hide" id="sign-up">
+      <div class="modal-project sign-up-modal">
+         <button class="modal-project-close btn-floating waves-effect waves-light blue lighten-1"><i class="material-icons">close</i></button>
+         <!-- обернем все в .form-slider-wrapper для того, чтобы скрыто было все кроме кнопки (см. css) -->
+         <div class="form-slider-wrapper">
+            <div class="form-slider">
+               <div class="left-50">
+                  <form> <!-- action и method не нужны, так как будем обрабатывать форму с помощью js -->
+                     <div class="row">
+                        <div class="input-field col s12 l6">
+                           <input placeholder="Your name" name="name" id="signup-name" type="text" class="validate">
+                           <label for="signup-name">Name</label>
+                        </div>
+                        <div class="input-field col s12 l6">
+                           <input name="pass" id="signup-pass" type="password" class="validate">
+                           <label for="signup-pass">Password</label>
+                        </div>
+                        <div class="input-field col s12 l6">
+                           <input placeholder="Your email" name="email" id="signup-email" type="email" class="validate">
+                           <label for="signup-email">Email</label>
+                        </div>
+                        <div class="input-field col s12 l6">
+                           <input placeholder="Your birthday" name="birthday" id="signup-birthday" type="text" class="datepicker">
+                           <label for="signup-birthday">Birthday</label>
+                        </div>
+                        <div class="col s12">Sex:
+                           <div>
+                              <label>
+                                 <input type="radio" value="male" name="sex" checked class="sex with-gap">
+                                 <span>Male</span>
+                              </label>
+                           </div>
+                           <div>
+                              <label>
+                                 <input type="radio" value="female" name="sex" class="sex with-gap">
+                                 <span>Female</span>
+                              </label>
+                           </div>
+                           <div>
+                              <label>
+                                 <input type="radio" value="other" name="sex" class="sex with-gap">
+                                 <span>Other</span>
+                              </label>
+                           </div>
+                        </div>
+                        <div class="col l6">
+                           <p>
+                              <label>
+                                 <!-- добавляем чекбоксу id и вешаем на него событие, для того чтобы кнопку 'sign-in' можно было нажать только при активном чекбоксе -->
+                                 <input type="checkbox" id="agree-rules">
+                                 <span>Agree with rules</span>
+                              </label>
+                           </p>
+                        </div>
+                        <div class="col l6">
+                           <p class="read-rules">(read rules)</p>
+                        </div>
+                        <div class="col s12 right-align">
+                           <button id="signup-submit" class="waves-effect waves-light btn disabled">Sign-in</button>
+                        </div>
+                     </div>
+                  </form>
+               </div>
+               <div class="right-50">
+                  <p class="read-rules-back">Back</p>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p> 
+                  <p>A itaque commodi quibusdam saepe quisquam harum enim impedit distinctio inventore eius repellendus veritatis praesentium voluptatem quod molestiae necessitatibus, reprehenderit fugiat asperiores.</p>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p> 
+                  <p>A itaque commodi quibusdam saepe quisquam harum enim impedit distinctio inventore eius repellendus veritatis praesentium voluptatem quod molestiae necessitatibus, reprehenderit fugiat asperiores.</p>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p> 
+                  <p>A itaque commodi quibusdam saepe quisquam harum enim impedit distinctio inventore eius repellendus veritatis praesentium voluptatem quod molestiae necessitatibus, reprehenderit fugiat asperiores.</p>
+                  <p class="read-rules-back">Back</p> 
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <!-- частично беру код из practice JS (дз unit_11 - pop-up) + см. main.js и style.css -->
+   <div class="modal-wrap hide" id="log-in">
+      <div class="modal-project login-modal">
+         <form>
+            <!-- добавляем value в email и pass на этапе отладки и тестирования, чтобы не приходилось постоянно вбивать данные -->
+            <div class="row">
+               <div class="input-field col s12">
+                  <input placeholder="Your email" id="login-email" type="text" class="validate">
+                  <!-- добавляем класс .active если поля автоматически будут заполняться информацией, см. форму cabinet.php -->
+                  <label for="login-email">Email</label>
+               </div>
+               <div class="input-field col s12">
+                  <input id="login-pass" type="password" class="validate">
+                  <label for="login-pass">Password</label>
+               </div>
+               <div class="col s12 right-align">
+                  <button id="login-submit" class="waves-effect waves-light btn"><i class="material-icons right">login</i>Login</button>
+               </div>
+            </div>
+         </form>
+         <button class="modal-project-close btn-floating waves-effect waves-light blue lighten-1"><i class="material-icons">close</i></button>
+      </div>
+   </div>
+
+   <script src="js/materialize.min.js"></script>
+   <script src="./script/ajax.js"></script>
+   <script src="./script/chips.js"></script>
+   <script src="./script/script.js"></script>
+   <script src="./script/main.js"></script>
+</body>
+</html>

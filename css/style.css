@@ -1,0 +1,110 @@
+.user-cab-header {
+   font-size: 20px;
+}
+
+.site-header {
+   border-bottom: 1px solid #26a69a;
+   padding: 25px 0px;
+}
+
+.site-title {
+   font-size: 24px;
+   margin: 0;
+}
+
+.modal-wrap {
+   position: fixed;
+   left: 0;
+   right: 0;
+   top: 0;
+   bottom: 0;
+   background-color: rgba(0, 0, 0, .5);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   z-index: 2;
+}
+
+.modal-project {
+   position: relative;
+   width: 250px;
+   /* height: 320px; */
+   border: 1px solid #26a69a;
+   border-radius: 12px;
+   box-shadow: 1px 1px 10px #1d1d1d;
+   padding: 10px;
+   background: #fff;
+}
+
+.modal-project-close {
+   position: absolute;
+   right: -20px;
+   top: -20px;
+}
+
+.form-slider {
+   width: 700px;
+   height: 390px;
+   display: flex;
+   align-items: start;
+   transition: all ease 1s;
+}
+
+.left-50,
+.right-50 {
+   /* width: 50%;
+   float: left; */
+   flex: 0 1 50%;
+   padding: 10px;
+}
+
+.right-50 {
+   height: 390px;
+   overflow-y: scroll;
+}
+
+.read-rules,
+.read-rules-back {
+   cursor: pointer;
+}
+
+.sign-up-modal {
+   width: 370px;
+}
+
+.login-modal {
+   padding-top: 30px;
+   width: 320px;
+}
+
+@media (max-width: 992px) {
+   .form-slider {
+      overflow-y: scroll;
+   }
+}
+
+.form-slider-wrapper {
+   overflow: hidden;
+}
+
+.hide {
+   display: none;
+}
+
+@media (max-width: 600px) {
+   .but-m {
+      margin: 30px 0;
+   }
+   .site-header {
+      border-bottom: none;
+   }
+}
+
+@media (min-width: 601px) and (max-width: 608px) {
+   .btn {
+      font-size: 12px;
+   }
+}
+
+
+
